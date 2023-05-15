@@ -2,7 +2,7 @@
 
 ****
 
-<img title="" src="file:///Users/qy/Documents/other/fireworksRN/logo.jpg" alt="" width="180">
+<img title="" src="./logo.jpg" alt="" width="180">
 
 
 
