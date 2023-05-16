@@ -11,3 +11,12 @@
 | react-native-tools-next                   | 一些成熟的方法            | ⚠️Peer Dependencies             |
 
 ⚠️所需权限声明尚未配置，请根据实际使用情况配置[详见>>](https://github.com/zoontek/react-native-permissions)
+
+
+
+| 包名                       | 对等依赖                                                                                     |     |
+| ------------------------ | ---------------------------------------------------------------------------------------- | --- |
+| @react-navigation/native | react-native-screens                                      react-native-safe-area-context |     |
+|                          |                                                                                          |     |
+|                          |                                                                                          |     |
+|                          |                                                                                          |     |
