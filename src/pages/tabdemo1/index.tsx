@@ -12,7 +12,7 @@ interface IProps {
 function TabDemo1({ route, navigation }: IProps) {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <TouchableOpacity onPress={() => navigation.goBack()} >
+            <TouchableOpacity onPress={() => navigation.navigate('Demo1',{id:'1111'})} >
                 <Text style={{ margin: 10, color: 'blue' }}>TabDemo1</Text>
             </TouchableOpacity>
         </View >

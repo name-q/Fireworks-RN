@@ -12,7 +12,7 @@ interface IProps {
 function Demo1({ route, navigation }: IProps) {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>{route.params.id || '?'}</Text>
+            <Text>{route.params?.id || '?'}</Text>
             <TouchableOpacity onPress={() => navigation.goBack()} >
                 <Text style={{ margin: 10, color: 'blue' }}>Go back</Text>
             </TouchableOpacity>
