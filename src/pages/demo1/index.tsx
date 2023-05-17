@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { RootStackParamList, RootStackNavigation } from '@/navigator/stack';
+import { RootStackNavigation } from '@/navigator/stack';
+import { RootStackParamList } from '@/navigator/router';
 import { RouteProp } from '@react-navigation/native';
 
 interface IProps {

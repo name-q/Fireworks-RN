@@ -1,13 +1,9 @@
 import React from 'react';
 import { CardStyleInterpolators, createStackNavigator, HeaderStyleInterpolators, StackNavigationProp } from '@react-navigation/stack';
 
-import { stackConfig } from '@/navigator/router'
+import { stackConfig, RootStackParamList } from '@/navigator/router'
 import AppTabbar from '@/navigator/tabbar'
 
-export type RootStackParamList = {
-    Demo1: { id: string };
-    AppTabbar: {};
-}
 export type RootStackNavigation = StackNavigationProp<RootStackParamList>
 
 const Stack = createStackNavigator<RootStackParamList>();

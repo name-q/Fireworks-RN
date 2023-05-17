@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { BottomTabsParamList, BottomTabsNavigation } from '@/navigator/tabbar';
+import { BottomTabsNavigation } from '@/navigator/tabbar';
+import { BottomTabsParamList } from '@/navigator/router';
 import { RouteProp } from '@react-navigation/native';
 
 interface IProps {

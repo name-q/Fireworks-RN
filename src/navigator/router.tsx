@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { RootStackParamList } from '@/navigator/stack'
 import { StackNavigationOptions } from '@react-navigation/stack';
-import { BottomTabsParamList } from '@/navigator/tabbar';
 import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 
 import Demo1 from '@/pages/demo1'
@@ -15,6 +13,11 @@ interface stackMap {
     name: keyof RootStackParamList;
     component: React.ReactNode | React.MemoExoticComponent<any>;
     options?: StackNavigationOptions;
+}
+
+type RootStackParamList = {
+    AppTabbar: undefined;
+    Demo1: { id: string };
 }
 
 const stackConfig: Array<stackMap> = [
@@ -36,6 +39,10 @@ interface tabbarMap {
     options?: BottomTabNavigationOptions
 }
 
+type BottomTabsParamList = {
+    TabDemo1: undefined;
+}
+
 const tabbarConfig: Array<tabbarMap> = [
     {
         title: '首页',
@@ -46,4 +53,5 @@ const tabbarConfig: Array<tabbarMap> = [
     }
 ]
 
-export { stackConfig, tabbarConfig }
+export { stackConfig, tabbarConfig };
+export type { RootStackParamList, BottomTabsParamList };

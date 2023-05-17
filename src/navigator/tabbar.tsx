@@ -2,11 +2,8 @@ import React from 'react';
 import { createBottomTabNavigator, BottomTabNavigationProp } from '@react-navigation/bottom-tabs'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 
-import { tabbarConfig } from '@/navigator/router'
+import { tabbarConfig, BottomTabsParamList } from '@/navigator/router'
 
-export type BottomTabsParamList = {
-    TabDemo1: undefined;
-}
 export type BottomTabsNavigation = BottomTabNavigationProp<BottomTabsParamList>
 
 const BottomTabs = createBottomTabNavigator<BottomTabsParamList>();
