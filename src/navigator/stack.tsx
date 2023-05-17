@@ -1,8 +1,8 @@
 import React from 'react';
 import { CardStyleInterpolators, createStackNavigator, HeaderStyleInterpolators, StackNavigationProp } from '@react-navigation/stack';
 
+import { stackConfig } from '@/navigator/router'
 import AppTabbar from '@/navigator/tabbar'
-import Demo1 from '@/pages/demo1'
 
 export type RootStackParamList = {
     Demo1: { id: string };
@@ -32,11 +32,16 @@ function AppStack() {
                 component={AppTabbar}
                 options={{ title: "", headerShown: false }}
             />
-            <Stack.Screen
-                name="Demo1"
-                component={Demo1}
-                options={{ title: '详情页', headerShown: true }}
-            />
+
+            {stackConfig?.map((item, index) => (
+                <Stack.Screen
+                    name={item.name}
+                    // @ts-ignore
+                    component={item.component}
+                    options={{ ...item?.options, title: item.title, headerShown: item.headerShow }}
+                />
+            ))}
+
         </Stack.Navigator>
     );
 }
