@@ -1,0 +1,21 @@
+import React, { memo } from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { BottomTabsParamList, BottomTabsNavigation } from '@/navigator/tabbar';
+import { RouteProp } from '@react-navigation/native';
+
+interface IProps {
+    route: RouteProp<BottomTabsParamList, 'TabDemo1'>,
+    navigation: BottomTabsNavigation
+}
+
+function TabDemo1({ route, navigation }: IProps) {
+    return (
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <TouchableOpacity onPress={() => navigation.goBack()} >
+                <Text style={{ margin: 10, color: 'blue' }}>TabDemo1</Text>
+            </TouchableOpacity>
+        </View >
+    );
+}
+
+export default memo(TabDemo1)

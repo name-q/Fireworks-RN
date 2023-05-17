@@ -1,16 +1,16 @@
 import React from 'react';
 import { CardStyleInterpolators, createStackNavigator, HeaderStyleInterpolators, StackNavigationProp } from '@react-navigation/stack';
 
-// import AppBottomTabs from '@/navigator/bottomTabs'
+import AppTabbar from '@/navigator/tabbar'
 import Demo1 from '@/pages/demo1'
 
 export type RootStackParamList = {
     Demo1: { id: string };
-    Tabbar: {}
+    AppTabbar: {};
 }
-const Stack = createStackNavigator<RootStackParamList>();
-
 export type RootStackNavigation = StackNavigationProp<RootStackParamList>
+
+const Stack = createStackNavigator<RootStackParamList>();
 
 function AppStack() {
     return (
@@ -27,11 +27,11 @@ function AppStack() {
                 gestureDirection: 'horizontal',
             }}
         >
-            {/* <Stack.Screen
-                name="Tabbar"
-                component={Tabbar}
+            <Stack.Screen
+                name="AppTabbar"
+                component={AppTabbar}
                 options={{ title: "", headerShown: false }}
-            /> */}
+            />
             <Stack.Screen
                 name="Demo1"
                 component={Demo1}
@@ -42,15 +42,3 @@ function AppStack() {
 }
 
 export default AppStack;
-
-
-/* 5.x - 6.x差异统计 */
-/*
-    官方推荐包 @react-navigation/native-stack是原生封装不兼容
-    手式库 headerStyleInterpolator 造成iOS与安卓滑动风格不统一
-    @react-navigation/stack     是javaScript实现但高度可定制 
-    为了风格统一使用后者
-
-    显隐     headerMode:"none" => headerShown: false
-    标题     headerTitle => title
-*/
