@@ -2,7 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator, BottomTabNavigationProp } from '@react-navigation/bottom-tabs'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 
-import TabDemo1 from '@/pages/tabdemo1'
+import { tabbarConfig } from '@/navigator/router'
 
 export type BottomTabsParamList = {
     TabDemo1: undefined;
@@ -18,14 +18,19 @@ function AppTabbar() {
                 headerTitleAlign: 'center',
             }}
         >
-            <BottomTabs.Screen
-                name="TabDemo1"
-                component={TabDemo1}
-                options={{
-                    title: '我听',
-                    tabBarIcon: ({ color, size }) => (<AntDesign name='customerservice' size={size} style={{ color }} />)
-                }}
-            />
+            {tabbarConfig?.map((item, index) => (
+                <BottomTabs.Screen
+                    key={index + item.name}
+                    name={item.name}
+                    // @ts-ignore
+                    component={item.component}
+                    options={{
+                        ...item?.options,
+                        title: item.title,
+                        tabBarIcon: ({ color, size }) => (<AntDesign name={item.tabBarIconName} size={size} style={{ color }} />)
+                    }}
+                />
+            ))}
         </BottomTabs.Navigator>
     );
 }

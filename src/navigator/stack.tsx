@@ -35,13 +35,17 @@ function AppStack() {
 
             {stackConfig?.map((item, index) => (
                 <Stack.Screen
+                    key={index + item.name}
                     name={item.name}
                     // @ts-ignore
                     component={item.component}
-                    options={{ ...item?.options, title: item.title, headerShown: item.headerShow }}
+                    options={{
+                        ...item?.options,
+                        title: item.title,
+                        headerShown: item.headerShow
+                    }}
                 />
             ))}
-
         </Stack.Navigator>
     );
 }
