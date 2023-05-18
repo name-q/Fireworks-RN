@@ -5,6 +5,7 @@ import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 
 import Demo1 from '@/pages/demo1'
 import TabDemo1 from '@/pages/tabdemo1'
+import TabDemo2 from '@/pages/tabdemo2'
 
 // 堆栈
 interface stackMap {
@@ -41,15 +42,28 @@ interface tabbarMap {
 
 type BottomTabsParamList = {
     TabDemo1: undefined;
+    TabDemo2: undefined;
 }
 
+// tabBarIconName可使用图标 https://oblador.github.io/react-native-vector-icons/
 const tabbarConfig: Array<tabbarMap> = [
     {
         title: '首页',
         name: 'TabDemo1',
-        tabBarIconName: 'customerservice',
+        tabBarIconName: 'home',
         component: TabDemo1,
-        options: {}
+        options: {
+            headerShown: false
+        }
+    },
+    {
+        title: '我的',
+        name: 'TabDemo2',
+        tabBarIconName: 'user',
+        component: TabDemo2,
+        options: {
+            headerShown: false
+        }
     }
 ]
 
