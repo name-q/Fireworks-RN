@@ -16,10 +16,10 @@ const App: React.FC = () => {
   /**
    * 公共路由处理方案
    */
+  // 返回上一页
   const routerGoBack = () => {
     navigationRef.canGoBack() && navigationRef.goBack()
   }
-
 
   useEffect(() => {
     /**
@@ -29,6 +29,11 @@ const App: React.FC = () => {
      * 实现路由提示🔔
      */
     const routerGoBackMsg = msg.on('router:GoBack', routerGoBack)
+    // 还有一些方法先不写了 等用到再更 目前觉得够用
+    // https://reactnavigation.org/docs/navigation-actions
+    // https://reactnavigation.org/docs/stack-actions
+    // https://reactnavigation.org/docs/tab-actions
+    // 值得注意的是：reset方法会使根路由得以goback
 
     // DEBUG
     // setInterval(()=>{
