@@ -6074,10 +6074,10 @@ react-native-screens@^3.20.0:
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
 
-react-native-tools-next@^2.1.8:
-  version "2.1.8"
-  resolved "https://registry.yarnpkg.com/react-native-tools-next/-/react-native-tools-next-2.1.8.tgz#cf112255b4272ebf36c0c439da426759bb18fe07"
-  integrity sha512-NgH9nvAGGRoWiSyi5kqWwLkfGp39IuBaGOQ32lvTW/N3TiwJxDGpNQw4rSzRDWwyWyL5nazlo8drHndIC6DarQ==
+react-native-tools-next@^2.1.9:
+  version "2.1.9"
+  resolved "https://registry.yarnpkg.com/react-native-tools-next/-/react-native-tools-next-2.1.9.tgz#ff2dcbca79eca11831ea8d4fae7c4478edd6a440"
+  integrity sha512-OTLg+5KRAMB9UGPYtGIHZFwhE167/W/+finxhsSkgtfE13rwgFgP/UJtFXEqOqHvePC2k16esCIwNC3L0Hq6kA==
   dependencies:
     dayjs "^1.11.7"
     mitt "^3.0.0"
