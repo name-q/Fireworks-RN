@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 全屏模式下设置status bar 和 prmary_dark是没有意义的 -->
+    <color name="primary_dark">#000000</color>
+    <color name="status_bar_color">#000000</color>
+</resources>

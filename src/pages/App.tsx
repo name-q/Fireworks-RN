@@ -8,7 +8,8 @@ import AppStack from '@/navigator/stack';
 import { NavigationContainer, StackActions, useNavigationContainerRef } from '@react-navigation/native';
 import { useReduxDevToolsExtension } from '@react-navigation/devtools';
 import { msg } from 'react-native-tools-next';
-
+import SplashScreen from 'react-native-splash-screen'
+import system from '@/config/system'
 const App: React.FC = () => {
 
   const navigationRef = useNavigationContainerRef();
@@ -40,8 +41,13 @@ const App: React.FC = () => {
     //   msg.emit('router:GoBack')
     // },3000)
 
+    // 隐藏启动屏
+    let hideSplashScreen = setTimeout(() => {
+      SplashScreen.hide();
+    }, system.hideSplashScreenTimeSSS)
     return () => {
       routerGoBackMsg.remove()
+      clearTimeout(hideSplashScreen)
     }
   }, [])
 

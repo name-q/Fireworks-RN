@@ -10,10 +10,9 @@
 | @react-native-async-storage/async-storage | 代替被删除的AsyncStorage |                                 |
 | react-native-tools-next                   | 一些成熟的方法            | ⚠️Peer Dependencies             |
 | react-native-vector-icons                 | 图标库                | xcode  android/app/build.gradle |
+| react-native-splash-screen                | 启动屏                | 涉及原生                            |
 
 ⚠️所需权限声明尚未配置，请根据实际使用情况配置[详见>>](https://github.com/zoontek/react-native-permissions)
-
-
 
 | 包名                       | 对等依赖                                                                                     |     |
 | ------------------------ | ---------------------------------------------------------------------------------------- | --- |
