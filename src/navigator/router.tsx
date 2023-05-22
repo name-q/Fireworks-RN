@@ -62,7 +62,10 @@ const tabbarConfig: Array<tabbarMap> = [
         tabBarIconName: 'user',
         component: TabDemo2,
         options: {
-            headerShown: false
+            headerShown: false,
+            // TODO 封装公共的顶部区域
+            // headerShown: true,
+            // header:() => (<Text>111</Text>)
         }
     }
 ]
