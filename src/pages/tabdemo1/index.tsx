@@ -4,6 +4,7 @@ import { BottomTabsNavigation } from '@/navigator/tabbar';
 import { BottomTabsParamList } from '@/navigator/router';
 import { RouteProp } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Tts } from '@/utils/index';
 
 interface IProps {
     route: RouteProp<BottomTabsParamList, 'TabDemo1'>,
@@ -21,6 +22,9 @@ function TabDemo1({ route, navigation }: IProps) {
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.goBack()} >
                 <Text style={{ margin: 10, color: 'blue' }}>Invalid Go Back</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => Tts.speak('去抽烟 life is fucking movie')} >
+                <Text style={{ margin: 10, color: 'blue' }}>speak</Text>
             </TouchableOpacity>
         </SafeAreaView >
     );
