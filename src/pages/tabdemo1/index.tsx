@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect, useRef } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { BottomTabsNavigation } from '@/navigator/tabbar';
 import { BottomTabsParamList } from '@/navigator/router';
@@ -6,6 +6,7 @@ import { RouteProp } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Tts } from '@/utils/index';
 import styled from 'styled-components/native';
+import Lottie from 'lottie-react-native';
 
 const Container = styled.View`
   flex:1;
@@ -18,6 +19,7 @@ const Text = styled.Text`
   color: blue;
   font-weight: 500;
 `;
+
 const ButtonContainer = styled.TouchableOpacity<{ bgColor: string }>`
   width: 120px;
   height: 40px;
@@ -36,10 +38,22 @@ interface IProps {
 }
 
 function TabDemo1({ route, navigation }: IProps) {
+
+    const animationRef = useRef<Lottie>(null)
+    useEffect(() => {
+        animationRef.current?.play()
+        // Or set a specific startFrame and endFrame with:
+        // animationRef.current?.play(10, 100);
+    }, [])
     return (
         <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Container>
-                <Text>Open up App.js to start working on your app!</Text>
+                <Lottie
+                    loop
+                    ref={animationRef}
+                    source={require('./ae.json')}
+                />
+                <Text style={{ marginTop: 320 }}>Open up App.js to start working on your app!</Text>
                 <ButtonContainer onPress={() => { console.log(1) }} bgColor={'red'}>
                     <ButtonText>button</ButtonText>
                 </ButtonContainer>
