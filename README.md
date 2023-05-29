@@ -13,6 +13,8 @@
 | react-native-splash-screen                | 启动屏                | 涉及原生                            |
 | react-native-tts                          | 播报                 |                                 |
 | styled-components                         | css-in-js          |                                 |
+| @ant-design/react-native                  | UI库                |                                 |
+| babel-plugin-import                       | 按需加载               |                                 |
 
 ⚠️android所需权限声明尚未配置，请根据实际使用情况配置[详见>>](https://github.com/zoontek/react-native-permissions)
 

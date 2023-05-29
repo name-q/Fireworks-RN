@@ -1,15 +1,17 @@
 import React, { useEffect } from 'react';
 
 import { SafeAreaProvider } from 'react-native-safe-area-context'
-import { View, StatusBar } from 'react-native';
+import { StatusBar } from 'react-native';
 
-import AppStack from '@/navigator/stack';
-
-import { NavigationContainer, StackActions, useNavigationContainerRef } from '@react-navigation/native';
+import { NavigationContainer, useNavigationContainerRef } from '@react-navigation/native';
 import { useReduxDevToolsExtension } from '@react-navigation/devtools';
 import { msg } from 'react-native-tools-next';
 import SplashScreen from 'react-native-splash-screen'
+import { Provider } from '@ant-design/react-native';
 import system from '@/config/system'
+
+import AppStack from '@/navigator/stack';
+
 const App: React.FC = () => {
 
   const navigationRef = useNavigationContainerRef();
@@ -52,14 +54,14 @@ const App: React.FC = () => {
   }, [])
 
   return (
-    <>
+    <Provider>
       <SafeAreaProvider>
         <NavigationContainer ref={navigationRef}>
           <AppStack />
         </NavigationContainer>
         <StatusBar backgroundColor="transparent" barStyle="dark-content" translucent />
       </SafeAreaProvider>
-    </>
+    </Provider>
   )
 };
 

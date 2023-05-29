@@ -7,6 +7,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Tts } from '@/utils/index';
 import styled from 'styled-components/native';
 import Lottie from 'lottie-react-native';
+import { Button, Toast } from '@ant-design/react-native';
 
 const Container = styled.View`
   flex:1;
@@ -18,18 +19,6 @@ const Text = styled.Text`
   font-size: 20px;
   color: blue;
   font-weight: 500;
-`;
-
-const ButtonContainer = styled.TouchableOpacity<{ bgColor: string }>`
-  width: 120px;
-  height: 40px;
-  padding: 12px;
-  border-radius: 10px;
-  background-color: ${props => props.bgColor};
-`;
-const ButtonText = styled.Text`
-  font-size: 16px;
-  text-align: center;
 `;
 
 interface IProps {
@@ -54,9 +43,7 @@ function TabDemo1({ route, navigation }: IProps) {
                     source={require('./ae.json')}
                 />
                 <Text style={{ marginTop: 320 }}>Open up App.js to start working on your app!</Text>
-                <ButtonContainer onPress={() => { console.log(1) }} bgColor={'red'}>
-                    <ButtonText>button</ButtonText>
-                </ButtonContainer>
+                <Button type='primary' onPress={()=>{Toast.info('test tosat! test tosat!!!\n11')}}>tosat</Button>
             </Container>
             <TouchableOpacity onPress={() => navigation.navigate('Demo1', { id: '1111' })} >
                 <Text style={{ margin: 10, color: 'blue' }}>stack Demo1</Text>
