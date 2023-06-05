@@ -10,7 +10,7 @@ import Lottie from 'lottie-react-native';
 import { Button, Toast } from '@ant-design/react-native';
 
 import { useAppDispatch, useAppSelector } from '@/redux/store';
-import { asynctest, countAdd } from './redux/slice';
+import { asynctest, connect, countAdd, disconnect, initialState, stateType } from './redux/slice';
 
 const Container = styled.View`
   flex:1;
@@ -33,12 +33,15 @@ function TabDemo1({ route, navigation }: IProps) {
 
     const animationRef = useRef<Lottie>(null)
     useEffect(() => {
+        connect()
         animationRef.current?.play()
+        return () => disconnect()
         // Or set a specific startFrame and endFrame with:
         // animationRef.current?.play(10, 100);
     }, [])
 
-    const { count } = useAppSelector(state => state.tabdemo1)
+    const main: stateType = useAppSelector(state => state.tabdemo1)
+    let { count } = main || initialState
     const dispath = useAppDispatch()
 
     return (

@@ -1,11 +1,12 @@
+import { deregister, registerReducer } from "@/redux/store";
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { add, debounce } from "react-native-tools-next"
 
-const initialState: stateType = {
+export const initialState: stateType = {
     count: 0.1
 }
 
-interface stateType {
+export interface stateType {
     count: number
 }
 
@@ -28,8 +29,6 @@ const tabdemo1 = createSlice(
 
 export const { countAdd } = tabdemo1.actions;
 
-export default tabdemo1.reducer;
-
 
 export const asynctest = createAsyncThunk(
     'asynctest',
@@ -38,3 +37,8 @@ export const asynctest = createAsyncThunk(
     }
 )
 
+// redux链接切片
+export const connect = () =>  registerReducer({tabdemo1:tabdemo1.reducer})
+
+// redux断开切片
+export const disconnect = () => deregister(["tabdemo1"])
