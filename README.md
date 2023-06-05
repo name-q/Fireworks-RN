@@ -30,8 +30,4 @@ IOS配置了Camera案例
 
 ## 调试
 
-Chrome进入chrome://inspect/#devices
-
-点击Configure..新增localhost:8081
-
-点击React Native Experimental (Improved Chrome Reloads)下的inspect
+使用react native debugger
