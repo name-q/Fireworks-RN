@@ -13,6 +13,7 @@ import { Provider as ReduxProvider } from 'react-redux';
 import system from '@/config/system'
 import AppStack from '@/navigator/stack';
 import store from '@/redux/store';
+import Tts from 'react-native-tts';
 
 const App: React.FC = () => {
 
@@ -55,11 +56,17 @@ const App: React.FC = () => {
     }
   }, [])
 
+  // 监听全局路由变化
+  const onStateChange = () => {
+    // 关闭语音播报
+    Tts.stop()
+  }
+  
   return (
     <ReduxProvider store={store}>
       <AntdProvider>
         <SafeAreaProvider>
-          <NavigationContainer ref={navigationRef}>
+          <NavigationContainer ref={navigationRef} onStateChange={onStateChange}>
             <AppStack />
           </NavigationContainer>
           <StatusBar backgroundColor="transparent" barStyle="dark-content" translucent />
