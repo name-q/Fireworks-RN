@@ -7,10 +7,12 @@ import { NavigationContainer, useNavigationContainerRef } from '@react-navigatio
 import { useReduxDevToolsExtension } from '@react-navigation/devtools';
 import { msg } from 'react-native-tools-next';
 import SplashScreen from 'react-native-splash-screen'
-import { Provider } from '@ant-design/react-native';
-import system from '@/config/system'
+import { Provider as AntdProvider } from '@ant-design/react-native';
+import { Provider as ReduxProvider } from 'react-redux';
 
+import system from '@/config/system'
 import AppStack from '@/navigator/stack';
+import store from '@/redux/store';
 
 const App: React.FC = () => {
 
@@ -54,14 +56,16 @@ const App: React.FC = () => {
   }, [])
 
   return (
-    <Provider>
-      <SafeAreaProvider>
-        <NavigationContainer ref={navigationRef}>
-          <AppStack />
-        </NavigationContainer>
-        <StatusBar backgroundColor="transparent" barStyle="dark-content" translucent />
-      </SafeAreaProvider>
-    </Provider>
+    <ReduxProvider store={store}>
+      <AntdProvider>
+        <SafeAreaProvider>
+          <NavigationContainer ref={navigationRef}>
+            <AppStack />
+          </NavigationContainer>
+          <StatusBar backgroundColor="transparent" barStyle="dark-content" translucent />
+        </SafeAreaProvider>
+      </AntdProvider>
+    </ReduxProvider>
   )
 };
 

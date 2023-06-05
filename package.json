@@ -20,6 +20,7 @@
     "@react-navigation/devtools": "^6.0.18",
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/stack": "^6.3.16",
+    "@reduxjs/toolkit": "^1.9.5",
     "babel-plugin-module-resolver": "^5.0.0",
     "dayjs": "^1.11.7",
     "lottie-react-native": "^5.1.6",
@@ -34,6 +35,8 @@
     "react-native-tools-next": "^2.1.9",
     "react-native-tts": "^4.1.0",
     "react-native-vector-icons": "^9.2.0",
+    "react-redux": "^8.0.5",
+    "redux": "^4.2.1",
     "styled-components": "5.3.3"
   },
   "devDependencies": {
