@@ -21,6 +21,12 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
+# 获取当前的开发模式
+def development_mode?
+  target = ENV['TARGET']
+  return target.nil? || target.downcase == 'debug'
+end
+
 target 'fireworksRN' do
   config = use_native_modules!
 
@@ -30,9 +36,12 @@ target 'fireworksRN' do
   use_react_native!(
     :path => config[:reactNativePath],
     # Hermes is now enabled by default. Disable by setting this flag to false.
-    # Upcoming versions of React Native may rely on get_default_flags(), but
+    # Upcoming versions of React Native may rely onget_default_flags(), but
     # we make it explicit here to aid in the React Native upgrade process.
-    :hermes_enabled => flags[:hermes_enabled],
+    # :hermes_enabled => flags[:hermes_enabled],
+    # Hermes影响了 react native debugger 的连接 我并不想抛弃他去使用chrome://inspect
+    # 故开发模式下禁用Hermes
+    :hermes_enabled => development_mode? ? false : flags[:hermes_enabled],
     :fabric_enabled => flags[:fabric_enabled],
     # Enables Flipper.
     #
