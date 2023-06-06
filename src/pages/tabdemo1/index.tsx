@@ -12,6 +12,8 @@ import { Button, Toast } from '@ant-design/react-native';
 import { useAppDispatch, useAppSelector } from '@/redux/store';
 import { asynctest, connect, countAdd, disconnect, initialState, stateType } from './redux/slice';
 
+import Header from '@/components/header';
+
 const Container = styled.View`
   flex:1;
   background-color: white;
@@ -45,7 +47,8 @@ function TabDemo1({ route, navigation }: IProps) {
     const dispath = useAppDispatch()
 
     return (
-        <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}>
+            <Header />
             <ScrollView showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
                 <Container>
                     <Lottie
