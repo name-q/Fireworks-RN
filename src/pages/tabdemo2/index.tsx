@@ -21,6 +21,9 @@ function TabDemo2({ route, navigation }: IProps) {
             <TouchableOpacity onPress={() => navigation.goBack()} >
                 <Text style={{ margin: 10, color: 'blue' }}>Go Back</Text>
             </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Login')} >
+                <Text style={{ margin: 10, color: 'blue' }}>Go Login</Text>
+            </TouchableOpacity>
         </View >
     );
 }

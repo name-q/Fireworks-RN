@@ -4,6 +4,7 @@ import { StackNavigationOptions } from '@react-navigation/stack';
 import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 
 import Demo1 from '@/pages/demo1'
+import Login from '@/pages/login'
 import TabDemo1 from '@/pages/tabdemo1'
 import TabDemo2 from '@/pages/tabdemo2'
 
@@ -19,6 +20,7 @@ interface stackMap {
 type RootStackParamList = {
     AppTabbar: undefined;
     Demo1: { id: string };
+    Login: undefined;
 }
 
 const stackConfig: Array<stackMap> = [
@@ -27,6 +29,13 @@ const stackConfig: Array<stackMap> = [
         headerShow: true,
         name: "Demo1",
         component: Demo1,
+        options: {}
+    },
+    {
+        title: '登录',
+        headerShow: false,
+        name: "Login",
+        component: Login,
         options: {}
     }
 ]
