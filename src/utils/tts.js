@@ -4,8 +4,9 @@ Tts.addEventListener('tts-progress', (event) => console.log("progress", event));
 Tts.addEventListener('tts-cancel', (event) => console.log("cancel", event));
 Tts.addEventListener('tts-finish', (event) => console.log("finish", event));
 
-const speak = async text => {
+const speak = async (text, deleteRichTextLabel = false) => {
     if (!text) return
+    if (deleteRichTextLabel) text = text.replace(/<[^>]+>/g, "");
     try {
         await Tts.getInitStatus()
         // IOS可使用的语音包
