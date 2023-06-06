@@ -12,7 +12,7 @@ interface HeaderProps {
     reading?: string;
 }
 
-const Header: React.FC = ({ title, showLeft = true, reading }: HeaderProps) => {
+const Header: React.FC<HeaderProps> = ({ title, showLeft = true, reading }: HeaderProps) => {
     return (
         <Container>
             {showLeft && (
