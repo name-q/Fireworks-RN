@@ -1,0 +1,15 @@
+diff --git a/node_modules/@ant-design/icons-react-native/react-native.config.js b/node_modules/@ant-design/icons-react-native/react-native.config.js
+index 76ff4fa..cdf16ad 100644
+--- a/node_modules/@ant-design/icons-react-native/react-native.config.js
++++ b/node_modules/@ant-design/icons-react-native/react-native.config.js
+@@ -1,5 +1,7 @@
+ module.exports = {
+-  dependency: {
+-    assets: ['fonts']
+-  }
++  project: {
++    ios: {},
++    android: {}
++  },
++  assets: ['fonts']
+ };

@@ -1,0 +1,16 @@
+diff --git a/node_modules/@ant-design/react-native/react-native.config.js b/node_modules/@ant-design/react-native/react-native.config.js
+index db45665..b08a160 100644
+--- a/node_modules/@ant-design/react-native/react-native.config.js
++++ b/node_modules/@ant-design/react-native/react-native.config.js
+@@ -1,10 +1,8 @@
+ module.exports = {
+-  dependency: {
+-    assets: ['../icons-react-native/fonts'],
+-  },
+   project: {
+     android: {
+       sourceDir: './rn-kitchen-sink/android',
+     },
+   },
++  assets: ['../icons-react-native/fonts'],
+ };
