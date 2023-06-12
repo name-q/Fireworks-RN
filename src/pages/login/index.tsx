@@ -4,8 +4,8 @@ import { RootStackNavigation } from '@/navigator/stack';
 import { RootStackParamList } from '@/navigator/router';
 import { RouteProp } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { changePhone, connect, disconnect, initialState, stateType } from './redux/slice';
-import { useAppDispatch, useAppSelector } from '@/redux/store';
+import { changeLoading, changePhone, connect, disconnect, initialState, registerLogin, stateType, dispath } from './redux/slice';
+import { useAppSelector } from '@/redux/store';
 
 import { Button, Carousel, InputItem, WhiteSpace, WingBlank } from '@ant-design/react-native'
 import WwwImage from '@/models/wwwImage';
@@ -25,7 +25,6 @@ function Login({ route, navigation }: IProps) {
 
     const main: stateType = useAppSelector(state => state.login)
     let { loading, phone } = main || initialState
-    const dispath = useAppDispatch()
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: '#fff', alignContent: 'center' }}>
@@ -58,7 +57,8 @@ function Login({ route, navigation }: IProps) {
                 <Button
                     type="primary"
                     onPress={() => {
-                        console.log(1)
+                        dispath(changeLoading(true))
+                        dispath(registerLogin(phone))
                     }}
                     loading={loading}
                     disabled={loading}
