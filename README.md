@@ -4,6 +4,40 @@
 
 <img title="" src="./logo.jpg" alt="" width="180">
 
+
+
+## 开发
+
+1.更名
+
+npx react-native-rename@latest "youAppName"
+
+
+
+2.修改remote地址
+
+git remote -v
+
+git remote remove origin
+
+git remote -v
+
+#切换为你的git地址
+
+git remote add origin https://xxx.xxxx.com/app.git
+
+#新库上传
+
+git add .
+
+git commit -m "app rename"
+
+git push -u origin master
+
+#或者rm -rf .git后重新走git init流程
+
+
+
 | 包名                                        | 作用                 | 设置                              |
 | ----------------------------------------- | ------------------ | ------------------------------- |
 | babel-plugin-module-resolver              | 绝对路径               | babel.config.js / tsconfig.json |
