@@ -1,5 +1,5 @@
 
-const COMMON = {
+export const COMMON = {
     AUTHORIZATION: "Bearer",
     HTTP_TIME_OUT: 15,
 }

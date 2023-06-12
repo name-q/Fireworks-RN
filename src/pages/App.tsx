@@ -10,7 +10,7 @@ import SplashScreen from 'react-native-splash-screen'
 import { Provider as AntdProvider } from '@ant-design/react-native';
 import { Provider as ReduxProvider } from 'react-redux';
 
-import system from '@/config/system'
+import SYSTEM from '@/config/system'
 import AppStack from '@/navigator/stack';
 import store from '@/redux/store';
 import Tts from 'react-native-tts';
@@ -49,7 +49,7 @@ const App: React.FC = () => {
     // 隐藏启动屏
     let hideSplashScreen = setTimeout(() => {
       SplashScreen.hide();
-    }, system.hideSplashScreenTimeSSS)
+    }, SYSTEM.hideSplashScreenTimeSSS)
     return () => {
       routerGoBackMsg.remove()
       clearTimeout(hideSplashScreen)
@@ -61,7 +61,7 @@ const App: React.FC = () => {
     // 关闭语音播报
     Tts.stop()
   }
-  
+
   return (
     <ReduxProvider store={store}>
       <AntdProvider>
