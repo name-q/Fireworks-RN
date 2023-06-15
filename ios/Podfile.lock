@@ -390,11 +390,11 @@ PODS:
     - React-jsi (= 0.71.10)
     - React-logger (= 0.71.10)
     - React-perflogger (= 0.71.10)
-  - RNCAsyncStorage (1.18.1):
+  - RNCAsyncStorage (1.18.2):
     - React-Core
   - RNCMaskedView (0.2.9):
     - React-Core
-  - RNGestureHandler (2.10.0):
+  - RNGestureHandler (2.12.0):
     - React-Core
   - RNPermissions (3.8.0):
     - React-Core
@@ -636,9 +636,9 @@ SPEC CHECKSUMS:
   React-RCTVibration: d13cc2d63286c633393d3a7f6f607cc2a09ec011
   React-runtimeexecutor: a9a1cd79996c9a0846e3232ecb25c64e1cc0172e
   ReactCommon: 86289421205f793f8b50106aabca54f0b4abb574
-  RNCAsyncStorage: b90b71f45b8b97be43bc4284e71a6af48ac9f547
+  RNCAsyncStorage: ddc4ee162bfd41b0d2c68bf2d95acd81dd7f1f93
   RNCMaskedView: 949696f25ec596bfc697fc88e6f95cf0c79669b6
-  RNGestureHandler: e145476da655f3dbc48ef2f0a08cf7a34338c02b
+  RNGestureHandler: dec4645026e7401a0899f2846d864403478ff6a5
   RNPermissions: 06845210af313594dc3fe5e8ae6afc820d791409
   RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
   RNVectorIcons: fcc2f6cb32f5735b586e66d14103a74ce6ad61f8
