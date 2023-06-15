@@ -14,6 +14,7 @@ import SYSTEM from '@/config/system'
 import AppStack from '@/navigator/stack';
 import store from '@/redux/store';
 import Tts from 'react-native-tts';
+import '@/utils/react-native-debug-hermes-hook'
 
 const App: React.FC = () => {
 
