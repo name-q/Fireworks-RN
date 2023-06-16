@@ -1,0 +1,20 @@
+diff --git a/node_modules/react-native-tts/android/src/main/java/net/no_mad/tts/TextToSpeechModule.java b/node_modules/react-native-tts/android/src/main/java/net/no_mad/tts/TextToSpeechModule.java
+index 6be44a4..a9fd7e8 100644
+--- a/node_modules/react-native-tts/android/src/main/java/net/no_mad/tts/TextToSpeechModule.java
++++ b/node_modules/react-native-tts/android/src/main/java/net/no_mad/tts/TextToSpeechModule.java
+@@ -433,6 +433,15 @@ public class TextToSpeechModule extends ReactContextBaseJavaModule {
+         }
+     }
+ 
++    @ReactMethod
++    public void addListener(String eventName) {
++        // Keep: Required for RN built in Event Emitter Calls.
++    }
++    @ReactMethod
++    public void removeListeners(Integer count) {
++        // Keep: Required for RN built in Event Emitter Calls.
++    }
++
+     /**
+      * called on React Native Reloading JavaScript
+      * https://stackoverflow.com/questions/15563361/tts-leaked-serviceconnection
