@@ -4,15 +4,11 @@
 
 <img title="" src="./logo.jpg" alt="" width="180">
 
-
-
 ## 开发
 
 1.更名
 
 npx react-native-rename@latest "youAppName"
-
-
 
 2.修改remote地址
 
@@ -35,8 +31,6 @@ git commit -m "app rename"
 git push -u origin master
 
 #或者rm -rf .git后重新走git init流程
-
-
 
 | 包名                                        | 作用                 | 设置                              |
 | ----------------------------------------- | ------------------ | ------------------------------- |
@@ -64,4 +58,4 @@ IOS配置了Camera案例
 
 ## 调试
 
-使用react native debugger
+打开react native debugger后在react native debug menu中选择Debug JS Remotely
